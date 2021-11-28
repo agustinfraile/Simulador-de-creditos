@@ -26,7 +26,5 @@ const cliente1 = new Cliente(sueldo, creditoElegido, cuotaElegida, creditoADevol
 // MOSTRANDO RESULTADOS
 console.log(cliente1.retornarDatos());
 
-console.log(cliente1)
-
 // MUESTO POR PANTALLA LOS DATOS DEL CREDITO
 alert(cliente1.retornarDatos());
