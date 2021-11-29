@@ -25,12 +25,6 @@ const calcularInteres = (a, c, i) => {
     return valorCuotaTotal.toFixed(2);
 }
 
-// FUNCION QUE MUESTRA CADA CUOTA CON SU RESPECTIVO VALOR TOMANDO LA CANTIDAD A PAGAR Y LA CANTIDAD DE CUOTAS COMO PARAMETROS E INICIALIZANDO 'i' EN 1
-const mostrarCuotas = (c, e) => {
-    for(let i = 1; i <= e; i++) {
-        console.log(`Cuota ${i}: ${c}`)
-    }
-}
 
 // FUNCION PARA OBTENER EL VALOR DEL CREDITO A DEVOLVER POR EL CLIENTE
 const sumarTodasLasCuotas = (cntCuotas, valorDeLaCuota) => cntCuotas * valorDeLaCuota;

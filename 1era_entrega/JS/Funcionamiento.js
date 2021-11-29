@@ -122,6 +122,6 @@ do {
 }
 while(again == false);
 
-// LLAMO A LAS FUNCIONES  
-mostrarCuotas(cuotaConInteres, cuotaElegida);
+// // LLAMO A LAS FUNCIONES  
+// mostrarCuotas(cuotaConInteres, cuotaElegida);
 
