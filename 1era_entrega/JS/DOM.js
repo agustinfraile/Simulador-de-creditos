@@ -12,6 +12,7 @@ const mostrarCuotas = (c, e) => {
         listado.innerHTML = `Cuota ${i}: ${c}`;
         // agrego el listado al container del html
         cuotas.appendChild(listado)
+        
     }
 }
 
