@@ -1,0 +1,12 @@
+html {
+    text-align: center;
+}
+
+.section_credito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: lightblue;
+    height: 40vh;
+}
+
