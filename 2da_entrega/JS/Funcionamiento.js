@@ -2,153 +2,95 @@
     FUNCIONAMIENTO DEL SIMULADOR
 ================================ */
 
+// funcion para mostrar el select  
+const mostrarSelect = (arr, lugar) => {
 
+    // guardo en una variable la primera linea del select
+    let elementoSeleccionado = `<option selected disabled>-- Elegir crédito --</option>`;
 
-
-// funcion que permite el cambio de los select de manera dinamica
-const cambioDeSelect = () => {
-    
-        // obtengo la opcion selecionada en el sueldo 
-        let opcionSeleccionada = salarioIngresado.value;
-        console.log(opcionSeleccionada);
-
-        // condicional para modificar el select en caso de que haya algun dato
-        if (opcionSeleccionada != 0) {
-            // seleccionamos todas las opciones
-
-        }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-// BUCLE PARA CUANDO INGRESA EL SUELDO SI ES CORRECTO SIGUE, EN CASO DE QUE NO CUMPLA LA CONDICION CORTA
-do {
-    // PIDO AL USUARIO QUE INGRESE CUANTO COBRA POR MES APROXIMADAMENTE
-    sueldo = parseFloat(prompt('Ingrese un estimativo de cuanto cobra por mes'));
-    
-    // CONDICIONAL PARA VERIFICAR QUE EL SUELDO INGRESADO SEA MAYOR AL SUELDO PERMITIDO PARA SACAR UN CREDITO 
-    if( (sueldo >= sueldoMinimo)){
-        
-        //MUESTROS LOS CREDITOS FILTRADOS
-        alert('Muy bien, su sueldo fue cargado');
-
-        if(sueldo >= sueldoMinimo && sueldo < sueldoMaximo) {
-            alert(`Tenemos estos creditos para vos: ${creditosMinimo}`);
-        }
-        else if(sueldo >= sueldoMaximo) {
-            alert(`Tenemos estos creditos para vos: ${creditosMaximo}`);
-        }
-        
-
-        // BUCLE PARA CUANDO INGRESA EL CREDITO, EN CASO DE QUE SEA UN CREDITO DISPONIBLE SIGUE, SINO CORTA
-        do {
-            // PIDO AL USUARIO QUE INGRESE EL CREDITO
-            creditoElegido = parseFloat(prompt('Ingrese un credito'));
-            
-            // CONDICIONAL QUE PERMITE VERIFICAR SI EL CREDITO INGRESADO POR EL USUARIO ES VALIDO COMPARANDO CON LOS VALORES DEL ARRAY
-            if
-                (sueldo < sueldoMaximo && (creditoElegido === creditosDisponibles[0] || creditoElegido === creditosDisponibles[1] || creditoElegido === creditosDisponibles[2])  || 
-                sueldo >= sueldoMaximo && (creditoElegido === creditosDisponibles[0] || creditoElegido === creditosDisponibles[1] || creditoElegido === creditosDisponibles[2] || 
-                creditoElegido === creditosDisponibles[3] || creditoElegido === creditosDisponibles[4] || creditoElegido === creditosDisponibles[5] || 
-                creditoElegido === creditosDisponibles[6]))
-            {
-                alert('Perfecto! el credito esta cargado');
-                
-                
-
-                // BUCLE PARA CUANDO INGRESA LA CUOTA, EN CASO DE QUE SEA UNA CUOTA VALIDA SIGUE
-                do {
-                    // PIDO AL USUARIO LA CUOTA 
-                    cuotaElegida = parseFloat(prompt('Ingrese en cuantas cuotas quiere pagar el credito (12, 24, 36)'));
-
-                    
-                    // CUANDO LA CUOTA ELEGIDA ES EL PRIMER ELEMENTO DEL ARRAY
-                    if(cuotaElegida === elegirCuotaMensual[0]) {
-                
-                        
-                        // DECLARO EL INTERES PARA ESTE VALOR DE CUOTA
-                        interes = 1.4; /* interes del 40% EN 12 MESES */
-                        
-                        // ALMACENO EN UNA VARIABLE EL RESULTADO DE LA CUOTA CON EL INTERES
-                        cuotaConInteres = calcularInteres(creditoElegido ,cuotaElegida, interes);
-                        
-                        // COMPLETO LOS PARAMETROS DE LA FUNCION SUMARTODASLASCUOTAS
-                        creditoADevolver = sumarTodasLasCuotas(cuotaElegida, cuotaConInteres);
-                
-                        // CAMBIO EL VALOR DE AGAIN PARA PODER CORTAR EL CICLO
-                        again = true;
-                
-                    }
-                    
-                    // CUANDO LA CUOTA ELEGIDA ES EL SEGUNDO ELEMENTO DEL ARRAY
-                    else if(cuotaElegida === elegirCuotaMensual[1]) {
-                        
-                        // DECLARO EL INTERES PARA ESTE VALOR DE CUOTA
-                        interes = 1.8; /* interes del 80% EN 24 MESES */
-                        
-                        // ALMACENO EN UNA VARIABLE EL RESULTADO DE LA CUOTA CON EL INTERES
-                        cuotaConInteres = calcularInteres(creditoElegido ,cuotaElegida, interes);
-                        
-                        // COMPLETO LOS PARAMETROS DE LA FUNCION SUMARTODASLASCUOTAS
-                        creditoADevolver = sumarTodasLasCuotas(cuotaElegida, cuotaConInteres);
-                
-                        // CAMBIO EL VALOR DE AGAIN PARA PODER CORTAR EL CICLO
-                        again = true;
-                
-                    }
-                    
-                    // CUANDO LA CUOTA ELEGIDA ES EL TERCER ELEMENTO DEL ARRAY
-                    else if(cuotaElegida === elegirCuotaMensual[2]) {
-                        
-                        // DECLARO EL INTERES PARA ESTE VALOR DE CUOTA
-                        interes = 2.2; /* interes del 120% EN 36 MESES*/
-                        
-                        // ALMACENO EN UNA VARIABLE EL RESULTADO DE LA CUOTA CON EL INTERES
-                        cuotaConInteres = calcularInteres(creditoElegido ,cuotaElegida, interes);
-                        
-                        // COMPLETO LOS PARAMETROS DE LA FUNCION SUMARTODASLASCUOTAS
-                        creditoADevolver = sumarTodasLasCuotas(cuotaElegida, cuotaConInteres);
-                
-                        // CAMBIO EL VALOR DE AGAIN PARA PODER CORTAR EL CICLO
-                        again = true;
-                
-                    }
-                    
-                    // CUANDO NO ES 12, 24 O 36
-                    else{
-                        alert('Ingresa una cuota valida');
-                    }
-                    
-                }
-                while(again == false)
-                
-            }
-            else {
-                alert('Por favor ingresa un credito valido');
-            }
-        }
-        while(again == false)
-            
-        again = true;
-        }
-        
-        
-
-    else{
-        alert('No hay creditos disponibles para tu sueldo');
+    // ciclo que me permite escribir en html cada elemento option del select dependiento del array que quiero agregar
+    for(let i = 0; i < arr.length; i++ ) {
+        elementoSeleccionado += `<option value=${arr[i]}>$${arr[i]}</option>`
+        lugar.innerHTML = elementoSeleccionado;
     }
+
 }
-while(again == false);
+
+
+// funcion para cuando elijo un sueldo en el select
+salarioIngresado.addEventListener('change', function(){
+    // obtengo el valor del select
+    let valorSelect = salarioIngresado.value;
+
+    // agrego condicional con respecto al valor ingresado
+    if (valorSelect == 1) {
+        // guardo en una variable el array recortado para este caso
+        let arrayRecortado = creditosDisponibles.slice(1, 4);
+        // llamo a la funcion mostrarselecty le paso los parametros en donde quiero que se muestren
+        mostrarSelect(arrayRecortado, creditoIngresado);
+    }
+    else if (valorSelect == 2) {
+        // guardo en una variable el array recortado para este caso
+        let arrayRecortado = creditosDisponibles.slice(1, 6);
+        // llamo a la funcion mostrarselecty le paso los parametros en donde quiero que se muestren
+        mostrarSelect(arrayRecortado, creditoIngresado);
+
+    }
+    else if (valorSelect == 3) {
+        // guardo en una variable el array recortado para este caso
+        let arrayRecortado = creditosDisponibles.slice(1, creditosDisponibles.length);
+        // llamo a la funcion mostrarselecty le paso los parametros en donde quiero que se muestren
+        mostrarSelect(arrayRecortado, creditoIngresado);
+
+    }
+    else{
+        // guardo en una variable el array recortado para este caso
+        let arrayRecortado = creditosDisponibles.slice(0,1);
+        // llamo a la funcion mostrarselecty le paso los parametros en donde quiero que se muestren
+        mostrarSelect(arrayRecortado, creditoIngresado);
+    }
+})
 
 
 
+// evento para guardar datos del formulario
+formularioCredito.addEventListener("submit", function validarFormulario(e){
+    e.preventDefault();
+    
+    // ciclo while que permite reescribir el html con nueva informacion del credito
+    while(containerCuotasImpresas.firstChild) {
+        containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
+    }
+
+    
+    // ciclo que permite escribir en el html cada cuota del credito
+    for(let i = 1; i <= cuotaIngresada.value; i++) {
+
+        // guardo en una variable el calculo 
+        let valorCuotaTotal = (creditoIngresado.value / cuotaIngresada.value);
+    
+        // creo el elemento li
+        let listado = document.createElement("li");
+
+        // lo que voy a poner en el html
+        listado.innerHTML = `Cuota ${i}: ${valorCuotaTotal.toFixed(2)}`;
+
+        // agrego el listado al container del html
+        containerCuotasImpresas.appendChild(listado);
+        
+    }
+});
+
+// evento para limpiar el formulario con el click 
+botonLimpiar.addEventListener('click', function limparForm() {
+
+    // ciclo while que permite borrar el html
+    while(containerCuotasImpresas.firstChild) {
+        containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
+    }
+    
+    // limpando formulario
+    formularioCredito.reset();  
+    console.log('form limpiado con exito');
+
+});
