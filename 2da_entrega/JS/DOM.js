@@ -10,14 +10,20 @@ let interesIngresado =  document.getElementById("formulario_interes");
 let cuotaIngresada = document.getElementById("formulario_cuotas");
 // obtengo del formulario el boton del html y le asigno una variable
 let botonEnviar = document.getElementById("boton-calculador");
+// obtengo del formulario el boton del html para limpiarlo y le asigno una variable
+let botonLimpiar = document.getElementById("boton-limpiador");
 // obtengo el container del html donde voy a imprimir las cuotas 
-let containerCuotasImpresadas = document.getElementById("container-creditos");
-
+let containerCuotasImpresas = document.getElementById("container-creditos");
 
 // evento para guardar datos del formulario
 formularioCredito.addEventListener("submit", function validarFormulario(e){
     e.preventDefault();
     
+    // ciclo while que permite reescribir el html con nueva informacion del credito
+    while(containerCuotasImpresas.firstChild) {
+        containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
+    }
+
     let valorCuotaTotal = (creditoIngresado.value / cuotaIngresada.value) * interesIngresado.value;
 
     for(let i = 1; i <= cuotaIngresada.value; i++) {
@@ -29,7 +35,16 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
         listado.innerHTML = `Cuota ${i}: ${valorCuotaTotal.toFixed(2)}`;
 
         // agrego el listado al container del html
-        containerCuotasImpresadas.appendChild(listado);
+        containerCuotasImpresas.appendChild(listado);
         
     }
+});
+
+// evento para limpiar el formulario con el click 
+botonLimpiar.addEventListener('click', function limparForm() {
+
+    // limpando formulario
+    formularioCredito.reset();    
+    console.log('form limpiado con exito');
+
 });
