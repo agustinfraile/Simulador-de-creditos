@@ -23,10 +23,7 @@ let containerCuotasImpresas = document.getElementById("container-creditos");
 
 /* PARA GUARDAR ARRAYS */
 const creditosDisponibles = [0, 15000, 50000, 100000, 150000, 200000, 300000, 500000];
-const interesMensual = [1.4, 4.8, 2.2, 2.6, 3];
+const interesMensual = [1.4, 2.8, 2.2, 2.6, 3];
 
 // DECLARACIONES SIN ASIGNAR UN VALOR
-let cuotaElegida;
-let interes;
-let cuotaConInteres;
-let creditoADevolver;
+let valorCuotaTotal;

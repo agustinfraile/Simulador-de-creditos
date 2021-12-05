@@ -51,6 +51,38 @@ salarioIngresado.addEventListener('change', function(){
     }
 })
 
+// funcion para calcular el valor de la cuota sin el interes
+const valorCuota = (credito, cuota) => (credito/cuota).toFixed(2);
+
+
+// funcion para añadir el interes a las cuotas de acuerdo al valor de la cuota elegida
+const cuotaConInteres = (cuota, valorCuota) => {
+    let interesConCuota;
+
+    if (cuota == 12) {
+        interesConCuota = valorCuota * interesMensual[0];
+        return interesConCuota.toFixed(2);
+    }
+    else if (cuota == 24) {
+        interesConCuota = valorCuota * interesMensual[1];
+        return interesConCuota.toFixed(2);
+    }
+    else if (cuota == 36) {
+        interesConCuota = valorCuota * interesMensual[2];
+        return interesConCuota.toFixed(2);
+    }
+    else if (cuota == 48) {
+        interesConCuota = valorCuota * interesMensual[3];
+        return interesConCuota.toFixed(2);
+    }
+    else if (cuota == 60) {
+        interesConCuota = valorCuota * interesMensual[4];
+        return interesConCuota.toFixed(2);
+    }
+    
+
+}
+
 
 
 // evento para guardar datos del formulario
@@ -66,14 +98,15 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
     // ciclo que permite escribir en el html cada cuota del credito
     for(let i = 1; i <= cuotaIngresada.value; i++) {
 
-        // guardo en una variable el calculo 
-        let valorCuotaTotal = (creditoIngresado.value / cuotaIngresada.value);
-    
+        // guardo en una variable el calculo
+        valorDivision = valorCuota(creditoIngresado.value, cuotaIngresada.value);
+        valorCuotaTotal = cuotaConInteres(cuotaIngresada.value, valorDivision);
+
         // creo el elemento li
         let listado = document.createElement("li");
 
         // lo que voy a poner en el html
-        listado.innerHTML = `Cuota ${i}: ${valorCuotaTotal.toFixed(2)}`;
+        listado.innerHTML = `Cuota ${i}: $${valorCuotaTotal}`;
 
         // agrego el listado al container del html
         containerCuotasImpresas.appendChild(listado);
