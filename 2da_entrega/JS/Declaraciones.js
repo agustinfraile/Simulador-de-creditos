@@ -1,11 +1,8 @@
 /* ================================
         DECLARANDO VARIABLES
 ================================ */ 
-let sueldo;
-let creditoElegido;
 const creditosDisponibles = [15000, 50000, 100000, 150000, 200000, 300000, 500000];
 let cuotaElegida;
-const elegirCuotaMensual = [12, 24, 36];
 let interes;
 let cuotaConInteres;
 let again = false; /* VARIABLE QUE GUARDA EL VALOR FALSO PARA PODER SEGUIR CON EL CICLO */ 

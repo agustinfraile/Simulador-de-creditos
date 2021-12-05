@@ -24,9 +24,12 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
         containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
     }
 
-    let valorCuotaTotal = (creditoIngresado.value / cuotaIngresada.value) * interesIngresado.value;
-
+    
+    // ciclo que permite escribir en el html cada cuota del credito
     for(let i = 1; i <= cuotaIngresada.value; i++) {
+
+        // guardo en una variable el calculo 
+        let valorCuotaTotal = (creditoIngresado.value / cuotaIngresada.value) * interesIngresado.value;
     
         // creo el elemento li
         let listado = document.createElement("li");
@@ -43,6 +46,11 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
 // evento para limpiar el formulario con el click 
 botonLimpiar.addEventListener('click', function limparForm() {
 
+    // ciclo while que permite borrar el html
+    while(containerCuotasImpresas.firstChild) {
+        containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
+    }
+    
     // limpando formulario
     formularioCredito.reset();    
     console.log('form limpiado con exito');
