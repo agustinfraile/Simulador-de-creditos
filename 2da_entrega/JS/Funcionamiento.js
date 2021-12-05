@@ -3,6 +3,34 @@
 ================================ */
 
 
+
+
+// funcion que permite el cambio de los select de manera dinamica
+const cambioDeSelect = () => {
+    
+        // obtengo la opcion selecionada en el sueldo 
+        let opcionSeleccionada = salarioIngresado.value;
+        console.log(opcionSeleccionada);
+
+        // condicional para modificar el select en caso de que haya algun dato
+        if (opcionSeleccionada != 0) {
+            // seleccionamos todas las opciones
+
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 // BUCLE PARA CUANDO INGRESA EL SUELDO SI ES CORRECTO SIGUE, EN CASO DE QUE NO CUMPLA LA CONDICION CORTA
 do {
     // PIDO AL USUARIO QUE INGRESE CUANTO COBRA POR MES APROXIMADAMENTE
