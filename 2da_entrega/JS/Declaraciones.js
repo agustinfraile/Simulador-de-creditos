@@ -27,3 +27,4 @@ const interesMensual = [1.4, 2.8, 2.2, 2.6, 3];
 
 // DECLARACIONES SIN ASIGNAR UN VALOR
 let valorCuotaTotal;
+let listaDeCreditos = [];

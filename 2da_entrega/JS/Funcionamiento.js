@@ -55,6 +55,8 @@ salarioIngresado.addEventListener('change', function(){
 const valorCuota = (credito, cuota) => (credito/cuota).toFixed(2);
 
 
+
+
 // funcion para añadir el interes a las cuotas de acuerdo al valor de la cuota elegida
 const cuotaConInteres = (cuota, valorCuota) => {
     let interesConCuota;
@@ -84,6 +86,12 @@ const cuotaConInteres = (cuota, valorCuota) => {
 }
 
 
+// funcion para calcular el total a devolver del credito
+const creditoADevolver = (cuota, valorDeLaCuota) => (cuota * valorDeLaCuota);
+
+
+ 
+
 
 // evento para guardar datos del formulario
 formularioCredito.addEventListener("submit", function validarFormulario(e){
@@ -101,6 +109,7 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
         // guardo en una variable el calculo
         valorDivision = valorCuota(creditoIngresado.value, cuotaIngresada.value);
         valorCuotaTotal = cuotaConInteres(cuotaIngresada.value, valorDivision);
+        
 
         // creo el elemento li
         let listado = document.createElement("li");
@@ -112,6 +121,19 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
         containerCuotasImpresas.appendChild(listado);
         
     }
+
+    // creando usuario a partir de los datos ingresados anteriormente
+    const creditoUsuario = new Usuario(salarioIngresado.value, creditoIngresado.value, cuotaIngresada.value);
+    
+    // agrego el credito ingresado por el usuario al array
+    listaDeCreditos.push(creditoUsuario);
+    console.log(listaDeCreditos);
+
+    // agrego al local storage la lista de objetos en formato JSON 
+    localStorage.setItem('listaDeCreditos', JSON.stringify(listaDeCreditos));
+
+
+
 });
 
 // evento para limpiar el formulario con el click 
