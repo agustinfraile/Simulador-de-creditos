@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+
+    transition: background-color 700ms ease;
+}
+
+body main {
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+
+}
+
+body main .section-form {
+    /* background-color: #ccbc2d; */
+    width: 90%;
+    height: 75vh;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+body main .section-form h1 {
+    text-align: center;
+}
+
+body main .section-form #formulario-credito {
+    /* background-color: rgb(197, 128, 128); */
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.section-form #formulario-credito .botones-form {
+    width: 100%;
+}
+
+.section-form #formulario-credito #boton-calculador {
+    width: 100%;
+}
+
+.section-form #formulario-credito #boton-limpiador {
+    margin-top: 10px;
+    width: 100%;
+}
+
+body main .section-wrap {
+    /* background-color: #928d5e; */
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+body main .section-wrap #container-creditos {
+    /* color: white; */
+    list-style-type: none;
+    text-align: center;
+}
+
+body main .section-wrap #container-creditos li {
+    font-size: 30px;
+}
+
+.nav-mode ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* dark mode */
+.blackMode {
+    background-color: black;
+    color: white;
+}
