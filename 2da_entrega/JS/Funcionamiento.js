@@ -90,48 +90,53 @@ const cuotaConInteres = (cuota, valorCuota) => {
 const creditoADevolver = (cuota, valorDeLaCuota) => (cuota * valorDeLaCuota);
 
 
- 
+
 
 
 // evento para guardar datos del formulario
 formularioCredito.addEventListener("submit", function validarFormulario(e){
     e.preventDefault();
     
-    // ciclo while que permite reescribir el html con nueva informacion del credito
-    while(containerCuotasImpresas.firstChild) {
-        containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
-    }
+    if ( (salarioIngresado.value >= 0 && salarioIngresado.value <= 3) && (creditoIngresado.value != 10) && (cuotaIngresada.value >= 12 && cuotaIngresada.value <= 60) ) {
 
-    
-    // ciclo que permite escribir en el html cada cuota del credito
-    for(let i = 1; i <= cuotaIngresada.value; i++) {
-
-        // guardo en una variable el calculo
-        valorDivision = valorCuota(creditoIngresado.value, cuotaIngresada.value);
-        valorCuotaTotal = cuotaConInteres(cuotaIngresada.value, valorDivision);
+        // ciclo while que permite reescribir el html con nueva informacion del credito
+        while(containerCuotasImpresas.firstChild) {
+            containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
+        }
         
-
-        // creo el elemento li
-        let listado = document.createElement("li");
-
-        // lo que voy a poner en el html
-        listado.innerHTML = `Cuota ${i}: $${valorCuotaTotal}`;
-
-        // agrego el listado al container del html
-        containerCuotasImpresas.appendChild(listado);
         
+        // ciclo que permite escribir en el html cada cuota del credito
+        for(let i = 1; i <= cuotaIngresada.value; i++) {
+            
+            // guardo en una variable el calculo
+            valorDivision = valorCuota(creditoIngresado.value, cuotaIngresada.value);
+            valorCuotaTotal = cuotaConInteres(cuotaIngresada.value, valorDivision);
+            
+            
+            // creo el elemento li
+            let listado = document.createElement("li");
+            
+            // lo que voy a poner en el html
+            listado.innerHTML = `Cuota ${i}: $${valorCuotaTotal}`;
+            
+            // agrego el listado al container del html
+            containerCuotasImpresas.appendChild(listado);
+            
+        }
+        
+        // creando usuario a partir de los datos ingresados anteriormente
+        const creditoUsuario = new Usuario(salarioIngresado.value, creditoIngresado.value, cuotaIngresada.value);
+        
+        // agrego el credito ingresado por el usuario al array
+        listaDeCreditos.push(creditoUsuario);
+        console.log(listaDeCreditos);
+        
+        // agrego al local storage la lista de objetos en formato JSON 
+        localStorage.setItem('listaDeCreditos', JSON.stringify(listaDeCreditos));
+        
+    } else {
+        alert('Ingrese un valor correcto');
     }
-
-    // creando usuario a partir de los datos ingresados anteriormente
-    const creditoUsuario = new Usuario(salarioIngresado.value, creditoIngresado.value, cuotaIngresada.value);
-    
-    // agrego el credito ingresado por el usuario al array
-    listaDeCreditos.push(creditoUsuario);
-    console.log(listaDeCreditos);
-
-    // agrego al local storage la lista de objetos en formato JSON 
-    localStorage.setItem('listaDeCreditos', JSON.stringify(listaDeCreditos));
-
 
 
 });

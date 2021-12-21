@@ -1,3 +1,7 @@
+/* ================================
+            API DEL DOLAR
+================================ */
+
 let dolares = [];
 let divDolares = document.getElementById("div-dolares");
 

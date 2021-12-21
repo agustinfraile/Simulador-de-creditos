@@ -1,3 +1,7 @@
+/* ================================
+            DARK MODE
+================================ */
+
 // inicializo la variable 
 let darkMode;
 
