@@ -21,6 +21,9 @@ let botonLimpiar = document.getElementById("boton-limpiador");
 // obtengo el container del html donde voy a imprimir las cuotas 
 let containerCuotasImpresas = document.getElementById("container-creditos");
 
+// obtengo el container del html para mostrar un error
+let containerError = document.getElementById("container-error");
+
 /* PARA GUARDAR ARRAYS */
 const creditosDisponibles = [0, 15000, 50000, 100000, 150000, 200000, 300000, 500000];
 const interesMensual = [1.4, 2.8, 2.2, 2.6, 3];

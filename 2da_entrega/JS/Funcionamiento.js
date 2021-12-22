@@ -55,8 +55,6 @@ salarioIngresado.addEventListener('change', function(){
 const valorCuota = (credito, cuota) => (credito/cuota).toFixed(2);
 
 
-
-
 // funcion para añadir el interes a las cuotas de acuerdo al valor de la cuota elegida
 const cuotaConInteres = (cuota, valorCuota) => {
     let interesConCuota;
@@ -97,13 +95,18 @@ const creditoADevolver = (cuota, valorDeLaCuota) => (cuota * valorDeLaCuota);
 formularioCredito.addEventListener("submit", function validarFormulario(e){
     e.preventDefault();
     
+
     if ( (salarioIngresado.value >= 0 && salarioIngresado.value <= 3) && (creditoIngresado.value != 10) && (cuotaIngresada.value >= 12 && cuotaIngresada.value <= 60) ) {
+
 
         // ciclo while que permite reescribir el html con nueva informacion del credito
         while(containerCuotasImpresas.firstChild) {
-            containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
+            containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild);
         }
         
+        // agrego la clase que oculta el mensaje de error 
+        containerError.classList.add("container_error-form");
+
         
         // ciclo que permite escribir en el html cada cuota del credito
         for(let i = 1; i <= cuotaIngresada.value; i++) {
@@ -133,9 +136,11 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
         
         // agrego al local storage la lista de objetos en formato JSON 
         localStorage.setItem('listaDeCreditos', JSON.stringify(listaDeCreditos));
+
         
     } else {
-        alert('Ingrese un valor correcto');
+        // elimino la clase que oculta el mensaje de error para poder mostrar el mensaje
+        containerError.classList.remove('container_error-form');
     }
 
 
@@ -143,14 +148,18 @@ formularioCredito.addEventListener("submit", function validarFormulario(e){
 
 // evento para limpiar el formulario con el click 
 botonLimpiar.addEventListener('click', function limparForm() {
-
+    
     // ciclo while que permite borrar el html
     while(containerCuotasImpresas.firstChild) {
-        containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild)
+        containerCuotasImpresas.removeChild(containerCuotasImpresas.firstChild);
     }
     
     // limpando formulario
-    formularioCredito.reset();  
+    formularioCredito.reset();
+    
+    // agrego la clase que oculta el mensaje de error para poder ocultar el mensaje
+    containerError.classList.add("container_error-form");
+
     console.log('form limpiado con exito');
 
 });
