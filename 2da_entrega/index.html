@@ -103,13 +103,20 @@
                     <option value = 60>60 cuotas</option>
                 </select>
 
+                <!-- select para elegir el sistema de amortizacion del credito -->
+                <select id="formulario_sistema-credito" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected disabled>-- Elegir el sistema de pago --</option>
+                    <option value="aleman">Sistema Alemán</option>
+                    <option value="frances">Sistema Francés</option>
+                </select>
+
                 <!-- botones -->
                 <div class="botones-form">
                     <button id="boton-calculador" type="submit" class="btn btn-primary btn-lg" >Calcular cuotas</button>
                     <button id="boton-limpiador" type="button" class="btn btn-secondary btn-lg">Limpiar</button>
                 </div>
 
-                <!-- modal para mostrar error  -->
+                <!-- contenedor para mostrar error  -->
                 <div id="container-error" class="container_error-form">
                     <h4>Ingrese un valor correcto</h4>
                 </div>

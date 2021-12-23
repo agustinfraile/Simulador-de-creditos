@@ -2,7 +2,7 @@
     FUNCIONAMIENTO DEL SIMULADOR
 ================================ */
 
-// funcion para mostrar el select  
+// funcion para mostrar el select de manera dinamica 
 const mostrarSelect = (arr, lugar) => {
 
     // guardo en una variable la primera linea del select
@@ -53,6 +53,13 @@ salarioIngresado.addEventListener('change', function(){
 
 // funcion para calcular el valor de la cuota sin el interes
 const valorCuota = (credito, cuota) => (credito/cuota).toFixed(2);
+
+
+// funcion para calcular la amortizacion que servira para calcular en el sistema frances
+const calcularAmortizacion = () => {
+    let amortizacion = (creditoIngresado * interesIngresado) / ( 1 - (1 + interesIngresado) );
+    return amortizacion;
+}
 
 
 // funcion para añadir el interes a las cuotas de acuerdo al valor de la cuota elegida
