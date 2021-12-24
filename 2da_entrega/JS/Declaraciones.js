@@ -14,6 +14,8 @@ let creditoIngresado = document.getElementById("formulario_creditos-disponibles"
 let interesIngresado =  document.getElementById("formulario_interes");
 // obtengo del formulario la cuota del html y le asigno una variable
 let cuotaIngresada = document.getElementById("formulario_cuotas");
+// obtengo del formulario el sistema a implementar y le asigno una variable
+let sistemaIngresado = document.getElementById("formulario_sistema-credito");
 // obtengo del formulario el boton del html y le asigno una variable
 let botonEnviar = document.getElementById("boton-calculador");
 // obtengo del formulario el boton del html para limpiarlo y le asigno una variable

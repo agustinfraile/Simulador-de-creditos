@@ -55,13 +55,6 @@ salarioIngresado.addEventListener('change', function(){
 const valorCuota = (credito, cuota) => (credito/cuota).toFixed(2);
 
 
-// funcion para calcular la amortizacion que servira para calcular en el sistema frances
-const calcularAmortizacion = () => {
-    let amortizacion = (creditoIngresado * interesIngresado) / ( 1 - (1 + interesIngresado) );
-    return amortizacion;
-}
-
-
 // funcion para añadir el interes a las cuotas de acuerdo al valor de la cuota elegida
 const cuotaConInteres = (cuota, valorCuota) => {
     let interesConCuota;
