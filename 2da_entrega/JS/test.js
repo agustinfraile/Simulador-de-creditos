@@ -1,7 +1,3 @@
-/* ================================
-    FUNCIONAMIENTO SIST. FRANCES
-================================ */
-
 calcularCuotaFrances = (credito, cuotas) =>{
     // INICIALIZO LAS VARIABLES EN 0
     let interesesFrances = 0;
@@ -33,20 +29,30 @@ calcularCuotaFrances = (credito, cuotas) =>{
     for (let i = 1; i <= cuotas; i++) {
         interesesFrances = parseFloat( credito * (tasaMensual) ).toFixed(2);
         capitalPagado = (cuotasSistema - interesesFrances).toFixed(2);
-        credito = parseFloat( credito - capitalPagado).toFixed(2);
+        credito = parseFloat( credito - capitalPagado).toFixed(1);
 
 
         // AGREGO AL DOM LOS ELEMENTOS CREADOS
         let filaCreada = document.createElement('tr');
         
         filaCreada.innerHTML = ` 
-
             <td>${i}</td>
             <td>$${cuotasSistema}</td>
             <td>$${capitalPagado}</td>
             <td>$${interesesFrances}</td>
             <td>$${credito}</td>
         `
-        containerInformacion.appendChild(filaCreada);
+        containerCuotasImpresas.appendChild(filaCreada);
     }
+
+
+
 }
+
+// evento para guardar datos del formulario
+formularioCredito.addEventListener( "submit", function validarFormulario(e) {
+    e.preventDefault(); 
+
+    calcularCuotaFrances(creditoIngresado.value, cuotaIngresada.value);
+    
+})

@@ -67,22 +67,22 @@ body main .section-form #formulario-credito {
     display: none;
 }
 
-body main .section-wrap {
+body main #section-wrap {
     /* background-color: #928d5e; */
     width: 90%;
     height: auto;
-    margin: 0 auto;
+    margin: -60px auto;
     padding: 20px;
 }
 
 
-body main .section-wrap #container-creditos {
-    /* color: white; */
+body main #section-wrap #mostrar-creditos {
+    /* color: pink; */
     list-style-type: none;
     text-align: center;
 }
 
-body main .section-wrap #container-creditos li {
+body main .section-wrap #mostrar-creditos li {
     font-size: 30px;
 }
 

@@ -34,6 +34,11 @@ $( () => {
 
         $("#navbar-toggle").removeClass("navbar-dark bg-dark");
         $("#navbar-toggle").addClass("navbar-light bg-light");
+        
+        $("#mostrar-creditos").removeClass("table-dark");
+        $("#mostrar-creditos").addClass("table-light");
+
+
         $("body").removeClass("blackMode");
         localStorage.setItem("blackMode", "light")
     })
@@ -45,6 +50,10 @@ $( () => {
 
         $("#navbar-toggle").removeClass("navbar-light bg-light");
         $("#navbar-toggle").addClass("navbar-dark bg-dark");
+        
+        $("#mostrar-creditos").removeClass("table-light");
+        $("#mostrar-creditos").addClass("table-dark");
+        
         $("body").addClass("blackMode");
         localStorage.setItem("blackMode", "dark")
     })

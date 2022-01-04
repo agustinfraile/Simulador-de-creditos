@@ -21,14 +21,17 @@ let botonEnviar = document.getElementById("boton-calculador");
 // obtengo del formulario el boton del html para limpiarlo y le asigno una variable
 let botonLimpiar = document.getElementById("boton-limpiador");
 // obtengo el container del html donde voy a imprimir las cuotas 
-let containerCuotasImpresas = document.getElementById("container-creditos");
+let containerCuotasImpresas = document.getElementById("mostrar-creditos");
+
+
+let containerInformacion = document.getElementById("mostrar-cuotas");
+
 
 // obtengo el container del html para mostrar un error
 let containerError = document.getElementById("container-error");
 
 /* PARA GUARDAR ARRAYS */
 const creditosDisponibles = [0, 15000, 50000, 100000, 150000, 200000, 300000, 500000];
-const interesMensual = [1.4, 2.8, 2.2, 2.6, 3];
 
 // DECLARACIONES SIN ASIGNAR UN VALOR
 let valorCuotaTotal;

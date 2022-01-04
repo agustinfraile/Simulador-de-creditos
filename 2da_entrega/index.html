@@ -10,10 +10,12 @@
 
     <!-- Bootstrap v5.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- font awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Css local -->
     <link rel="stylesheet" href="CSS/estilos.css">
@@ -48,10 +50,10 @@
     <main>
         <!-- seccion 0 dolar -->
         <section class="section-usd">
-            <h2>Cotización del dolar a peso argentino</h2>
+            <h2>Cotización de dolar a peso argentino</h2>
             <div id="div-dolares">
 
-            </div>    
+            </div>
         </section>
         <!-- seccion 1 -->
         <section class="section-form">
@@ -82,31 +84,35 @@
             <form id="formulario-credito">
 
                 <!-- input para el sueldo mensual -->
-                <select id ="formulario_salario-ingresado" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" >
+                <select id="formulario_salario-ingresado" class="form-select form-select-lg mb-3"
+                    aria-label=".form-select-lg example">
                     <option selected disabled>-- Elegir aproximado de sueldo --</option>
-                    <option value = 0>Menor a $30.000</option>
-                    <option value = 1>Menor a $100.000</option>
-                    <option value = 2>Menor a $150.000</option>
-                    <option value = 3>Mayor a $150.000</option>
+                    <option value=0>Menor a $30.000</option>
+                    <option value=1>Menor a $100.000</option>
+                    <option value=2>Menor a $150.000</option>
+                    <option value=3>Mayor a $150.000</option>
                 </select>
 
                 <!-- select para el seleccionar las cuotas -->
-                <select id ="formulario_creditos-disponibles" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" >
-                    <option value = 10 selected disabled>-- Elegir crédito --</option>
+                <select id="formulario_creditos-disponibles" class="form-select form-select-lg mb-3"
+                    aria-label=".form-select-lg example">
+                    <option value=10 selected disabled>-- Elegir crédito --</option>
                 </select>
 
                 <!-- select para elegir las cuotas -->
-                <select id ="formulario_cuotas" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" >
+                <select id="formulario_cuotas" class="form-select form-select-lg mb-3"
+                    aria-label=".form-select-lg example">
                     <option selected disabled>-- Elegir cuotas --</option>
-                    <option value = 12>12 cuotas (Tasa del 55% anual)</option>
-                    <option value = 24>24 cuotas (Tasa del 60% anual)</option>
-                    <option value = 36>36 cuotas (Tasa del 62.4% anual)</option>
-                    <option value = 48>48 cuotas (Tasa del 64.8% anual)</option>
-                    <option value = 60>60 cuotas (Tasa del 67.2% anual)</option>
+                    <option value=12>12 cuotas (Tasa del 55% anual)</option>
+                    <option value=24>24 cuotas (Tasa del 60% anual)</option>
+                    <option value=36>36 cuotas (Tasa del 62.4% anual)</option>
+                    <option value=48>48 cuotas (Tasa del 64.8% anual)</option>
+                    <option value=60>60 cuotas (Tasa del 67.2% anual)</option>
                 </select>
 
                 <!-- select para elegir el sistema de amortizacion del credito -->
-                <select id="formulario_sistema-credito" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <select id="formulario_sistema-credito" class="form-select form-select-lg mb-3"
+                    aria-label=".form-select-lg example">
                     <option selected disabled>-- Elegir el sistema de pago --</option>
                     <option value="frances">Sistema Francés</option>
                     <option value="aleman">Sistema Alemán</option>
@@ -114,7 +120,7 @@
 
                 <!-- botones -->
                 <div class="botones-form">
-                    <button id="boton-calculador" type="submit" class="btn btn-primary btn-lg" >Calcular cuotas</button>
+                    <button id="boton-calculador" type="submit" class="btn btn-primary btn-lg">Calcular cuotas</button>
                     <button id="boton-limpiador" type="button" class="btn btn-secondary btn-lg">Limpiar</button>
                 </div>
 
@@ -126,12 +132,29 @@
 
 
         </section>
-        
+
         <!-- seccion 2 -->
         <section id="section-wrap">
-            <div class="section-wrap" id="section-wrap">
-                <ul id="container-creditos"></ul>
-            </div>
+            <table id="mostrar-creditos" class="table table-hover table-light">
+                <thead id="mostrar-filas">
+                    <tr>
+                        <th scope="col">N° Cuota</th>
+                        <th scope="col">Cuota pura</th>
+                        <th scope="col">Capital</th>
+                        <th scope="col">Interes</th>
+                        <!-- <th scope="col">IVA</th> -->
+                        <!-- <th scope="col">Valor Cuota</th> -->
+                        <th scope="col">Saldo Capital</th>
+                    </tr>
+                </thead>
+                <thead id="mostrar-cuotas">
+
+                </thead>
+                <tbody>
+                    <tr>
+
+                </tbody>
+            </table>
         </section>
     </main>
 
@@ -141,15 +164,17 @@
 
 
     <!-- jQuery 3.x minified-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- local scripts -->
-    <!-- <script src="JS/Declaraciones.js"></script> -->
-    <!-- <script src="JS/Clases.js"></script> -->
-    <!-- <script src="JS/Funcionamiento.js"></script> -->
+    <script src="JS/Declaraciones.js"></script>
+    <script src="JS/sistema-frances.js"></script>
+    <!-- <script src="JS/test.js"></script> -->
+    <script src="JS/Clases.js"></script>
+    <script src="JS/Funcionamiento.js"></script>
     <script src="JS/darkMode.js"></script>
     <script src="JS/API.js"></script>
-    <script src="JS/sistema-frances.js"></script>
 
 
     <!-- libreria moment.js -->
