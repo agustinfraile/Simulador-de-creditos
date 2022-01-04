@@ -61,15 +61,15 @@
                 <ul>
                     <li>
                         <button id="btnLightMode" class="btnLightMode btn btn-light">
-                            <!-- <i class="fas fa-sun"></i> -->
-                            <p>Cambiar a Modo claro</p>
+                            <i class="fas fa-sun"></i>
+                            <!-- <p>Cambiar a Modo claro</p> -->
                         </button>
                     </li>
 
                     <li>
                         <button id="btnDarkMode" class="btnDarkMode btn btn-dark">
-                            <!-- <i class="far fa-moon"></i> -->
-                            <p>Cambiar a Modo Oscuro</p>
+                            <i class="far fa-moon"></i>
+                            <!-- <p>Cambiar a Modo Oscuro</p> -->
                         </button>
                     </li>
                 </ul>
@@ -98,18 +98,18 @@
                 <!-- select para elegir las cuotas -->
                 <select id ="formulario_cuotas" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" >
                     <option selected disabled>-- Elegir cuotas --</option>
-                    <option value = 12>12 cuotas</option>
-                    <option value = 24>24 cuotas</option>
-                    <option value = 36>36 cuotas</option>
-                    <option value = 48>48 cuotas</option>
-                    <option value = 60>60 cuotas</option>
+                    <option value = 12>12 cuotas (Tasa del 55% anual)</option>
+                    <option value = 24>24 cuotas (Tasa del 60% anual)</option>
+                    <option value = 36>36 cuotas (Tasa del 62.4% anual)</option>
+                    <option value = 48>48 cuotas (Tasa del 64.8% anual)</option>
+                    <option value = 60>60 cuotas (Tasa del 67.2% anual)</option>
                 </select>
 
                 <!-- select para elegir el sistema de amortizacion del credito -->
                 <select id="formulario_sistema-credito" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                     <option selected disabled>-- Elegir el sistema de pago --</option>
-                    <option value="aleman">Sistema Alemán</option>
                     <option value="frances">Sistema Francés</option>
+                    <option value="aleman">Sistema Alemán</option>
                 </select>
 
                 <!-- botones -->
@@ -144,11 +144,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- local scripts -->
-    <script src="JS/Declaraciones.js"></script>
-    <script src="JS/Clases.js"></script>
-    <script src="JS/Funcionamiento.js"></script>
+    <!-- <script src="JS/Declaraciones.js"></script> -->
+    <!-- <script src="JS/Clases.js"></script> -->
+    <!-- <script src="JS/Funcionamiento.js"></script> -->
     <script src="JS/darkMode.js"></script>
     <script src="JS/API.js"></script>
+    <script src="JS/sistema-frances.js"></script>
+
 
     <!-- libreria moment.js -->
     <script src="JS/moment.js"></script>
