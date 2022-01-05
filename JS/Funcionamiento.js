@@ -83,9 +83,6 @@ formularioCredito.addEventListener( "submit", function validarFormulario(e) {
     } else {
         console.log('por favor elija un sistema valido');
     }
-    
-
-    localStorage.setItem('credito', JSON.stringify())
 });
 
 // evento para limpiar el formulario con el click 
@@ -99,6 +96,9 @@ botonLimpiar.addEventListener('click', function limparForm() {
     // para limpiar el formulario
     formularioCredito.reset();
     
+
+
+
     // agrego la clase que oculta el mensaje de error para poder ocultar el mensaje
     containerError.classList.add("container_error-form");
 

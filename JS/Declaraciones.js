@@ -31,4 +31,3 @@ let containerError = document.getElementById("container-error");
 
 /* PARA GUARDAR ARRAYS */
 const creditosDisponibles = [0, 15000, 50000, 100000, 150000, 200000, 300000, 500000];
-let listadoDeCreditos = []; //Lo voy a usar para guardar el credito y subirlo en local storage
