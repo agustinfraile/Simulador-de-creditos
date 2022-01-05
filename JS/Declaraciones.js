@@ -31,3 +31,4 @@ let containerError = document.getElementById("container-error");
 
 /* PARA GUARDAR ARRAYS */
 const creditosDisponibles = [0, 15000, 50000, 100000, 150000, 200000, 300000, 500000];
+const listadoNuevosCreditos = []; // variable que guarda un array vacio para almacenar los creditos ingresados y luego ingresarlos en el localStorege

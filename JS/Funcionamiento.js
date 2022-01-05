@@ -83,6 +83,16 @@ formularioCredito.addEventListener( "submit", function validarFormulario(e) {
     } else {
         console.log('por favor elija un sistema valido');
     }
+
+
+    // agrego el credito ingresado en el array de creditos que realice en las declaraciones
+    listadoNuevosCreditos.push(new Usuario (salarioIngresado.value, creditoIngresado.value, cuotaIngresada.value, sistemaIngresado.value));
+
+    // paso a JSON 
+    let listadoNuevosCreditosJSON = JSON.stringify(listadoNuevosCreditos)
+
+    // agrego al local storage el listado de creditos ya pasado a JSON
+    localStorage.setItem('credito', listadoNuevosCreditosJSON)
 });
 
 // evento para limpiar el formulario con el click 
@@ -95,9 +105,6 @@ botonLimpiar.addEventListener('click', function limparForm() {
     
     // para limpiar el formulario
     formularioCredito.reset();
-    
-
-
 
     // agrego la clase que oculta el mensaje de error para poder ocultar el mensaje
     containerError.classList.add("container_error-form");
