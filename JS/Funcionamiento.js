@@ -79,7 +79,9 @@ formularioCredito.addEventListener( "submit", function validarFormulario(e) {
     if (sistemaIngresado.value === 'frances') {
         calcularCuotaFrances(creditoIngresado.value, cuotaIngresada.value);
     } else if (sistemaIngresado.value === 'aleman') {
-        console.log('falta calcular sistema aleman')
+        calcularCuotaAleman(creditoIngresado.value, cuotaIngresada.value);
+    } else {
+        console.log('por favor elija un sistema valido');
     }
     
 

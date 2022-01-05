@@ -57,6 +57,10 @@ body main .section-form #formulario-credito {
     width: 100%;
 }
 
+.section-form #formulario-credito #boton-calculador a {
+
+}
+
 .section-form #formulario-credito #boton-limpiador {
     margin-top: 10px;
     width: 100%;
@@ -71,7 +75,7 @@ body main #section-wrap {
     /* background-color: #928d5e; */
     width: 90%;
     height: auto;
-    margin: -60px auto;
+    margin: 100px auto;
     padding: 20px;
 }
 

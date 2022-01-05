@@ -34,5 +34,4 @@ let containerError = document.getElementById("container-error");
 const creditosDisponibles = [0, 15000, 50000, 100000, 150000, 200000, 300000, 500000];
 
 // DECLARACIONES SIN ASIGNAR UN VALOR
-let valorCuotaTotal;
 let listaDeCreditos = [];
