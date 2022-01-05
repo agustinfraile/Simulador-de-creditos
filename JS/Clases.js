@@ -2,10 +2,11 @@
         FUNCION CONSTRUCTORA
 ================================ */ 
 class Usuario {
-    constructor(sueldo, creditoSacar, cuotas) {
+    constructor(sueldo, creditoSacar, cuotas, metodoElegido) {
         this.sueldo = sueldo;
         this.creditoSacar = creditoSacar;
         this.cuotas = cuotas;
+        this.metodoElegido = metodoElegido;
     }
 
     /* ================================
@@ -13,5 +14,5 @@ class Usuario {
     ================================ */ 
 
     // METODO PARA RETORNAR TODOS LOS DATOS DEL OBJETO INGRESADO POR EL USUARIO
-    retornarDatos = () => "Sueldo: " + this.sueldo + " Credito: " + this.creditoSacar + " Cuotas: " + this.cuotas;
+    retornarDatos = () => "Sueldo: " + this.sueldo + " Credito: " + this.creditoSacar + " Cuotas: " + this.cuotas + " Metodo: " + this.metodoElegido;
 }

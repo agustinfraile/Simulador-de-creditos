@@ -24,19 +24,17 @@ calcularCuotaAleman = (credito, cuotas) =>{
         console.log('ingrese un valor valido de cuota')
     }
 
-    // VARIABLE QUE ALMACENA LA FORMULA DEL SISTEMA FRANCES
+    // VARIABLE QUE ALMACENA LA FORMULA PARA CALCULAR EL CAPITAL QUE VOY PAGANDO DEL SISTEMA ALEMAN 
     capitalPagadoAleman = parseFloat(credito / cuotas).toFixed(2);
 
-    console.log(capitalPagadoAleman);
-
-    // CICLO QUE PERMITE IR CALCULANDO LOS INTERESES EL CAPITAL Y EL CREDITO DEL SISTEMA FRANCES 
+    // CICLO QUE PERMITE IR CALCULANDO LOS INTERESES, EL CAPITAL Y EL CREDITO DEL SISTEMA ALEMAN Y A SU VEZ IR REASIGNANDO SUS VALORES 
     for (let i = 1; i <= cuotas; i++) {
         interesesAleman = parseFloat( credito * (tasaMensual) ).toFixed(2);
         credito = parseFloat( credito - capitalPagadoAleman).toFixed(2);
         cuotasSistemaAleman = (parseFloat(capitalPagadoAleman) + parseFloat(interesesAleman)).toFixed(2);
 
 
-        // AGREGO AL DOM LOS ELEMENTOS CREADOS
+        // AGREGO AL DOM LOS ELEMENTOS CREADOS COMO PARTE DE LA TABLA CREADA EN HTML
         let filaCreada = document.createElement('tr');
         
         filaCreada.innerHTML = ` 

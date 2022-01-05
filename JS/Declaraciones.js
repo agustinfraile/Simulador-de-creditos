@@ -20,10 +20,9 @@ let sistemaIngresado = document.getElementById("formulario_sistema-credito");
 let botonEnviar = document.getElementById("boton-calculador");
 // obtengo del formulario el boton del html para limpiarlo y le asigno una variable
 let botonLimpiar = document.getElementById("boton-limpiador");
-// obtengo el container del html donde voy a imprimir las cuotas 
+// obtengo el container del html donde voy a imprimir el titulo de las cuotas 
 let containerCuotasImpresas = document.getElementById("mostrar-creditos");
-
-
+// obtengo el container del html donde voy a imprimir toda la informacion de las cuotas 
 let containerInformacion = document.getElementById("mostrar-cuotas");
 
 
@@ -32,6 +31,4 @@ let containerError = document.getElementById("container-error");
 
 /* PARA GUARDAR ARRAYS */
 const creditosDisponibles = [0, 15000, 50000, 100000, 150000, 200000, 300000, 500000];
-
-// DECLARACIONES SIN ASIGNAR UN VALOR
-let listaDeCreditos = [];
+let listadoDeCreditos = []; //Lo voy a usar para guardar el credito y subirlo en local storage

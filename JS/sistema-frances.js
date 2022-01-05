@@ -24,19 +24,17 @@ calcularCuotaFrances = (credito, cuotas) =>{
         console.log('ingrese un valor valido de cuota')
     }
 
-    // VARIABLE QUE ALMACENA LA FORMULA DEL SISTEMA FRANCES
+    // VARIABLE QUE ALMACENA LA FORMULA PARA CALCULAR LA CUOTA DEL SISTEMA FRANCES
     cuotasSistema = ((credito * tasaMensual) /[ 1 - [ Math.pow( (1 + tasaMensual), -cuotas ) ]]).toFixed(1);
 
-    console.log(cuotasSistema);
-
-    // CICLO QUE PERMITE IR CALCULANDO LOS INTERESES EL CAPITAL Y EL CREDITO DEL SISTEMA FRANCES 
+    // CICLO QUE PERMITE IR CALCULANDO LOS INTERESES, EL CAPITAL Y EL CREDITO DEL SISTEMA FRANCES Y A SU VEZ IR REASIGNANDO SUS VALORES
     for (let i = 1; i <= cuotas; i++) {
         interesesFrances = parseFloat( credito * (tasaMensual) ).toFixed(2);
         capitalPagado = (cuotasSistema - interesesFrances).toFixed(2);
         credito = parseFloat( credito - capitalPagado).toFixed(2);
 
 
-        // AGREGO AL DOM LOS ELEMENTOS CREADOS
+        // AGREGO AL DOM LOS ELEMENTOS CREADOS COMO PARTE DE LA TABLA CREADA EN HTML
         let filaCreada = document.createElement('tr');
         
         filaCreada.innerHTML = ` 
